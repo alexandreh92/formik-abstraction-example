@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { FieldArray } from 'formik';
 import Input from '../Input';
 
@@ -10,14 +10,24 @@ interface Props {
 const ArrayInputObject: React.FC<Props> = ({ name, objectKey }) => {
   return (
     <FieldArray name={name}>
-      {({ move, swap, push, insert, unshift, pop, form }) => {
+      {({ move, swap, push, insert, remove, unshift, pop, form }) => {
         return (
-          <div>
-            {form.values[name] &&
-              form.values[name].map((item, idx) => (
-                <Input key={idx} name={`${name}.${idx}.${objectKey}`} />
-              ))}
-          </div>
+          <Fragment>
+            <div>
+              {form.values[name] &&
+                form.values[name].map((item, idx) => (
+                  <div style={{ display: 'flex' }} key={idx}>
+                    <Input name={`${name}.${idx}.${objectKey}`} />
+                    <button type="button" onClick={() => remove(idx)}>
+                      -
+                    </button>
+                  </div>
+                ))}
+            </div>
+            <button type="button" onClick={() => push({ [objectKey]: '' })}>
+              +
+            </button>
+          </Fragment>
         );
       }}
     </FieldArray>

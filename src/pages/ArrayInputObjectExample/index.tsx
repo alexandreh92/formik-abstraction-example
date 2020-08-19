@@ -11,9 +11,15 @@ interface Teste {
   name: string;
 }
 
+interface Foo {
+  id: number;
+  bar: string;
+}
+
 interface Values {
   name: string;
   testes: Teste[];
+  foo: Foo[];
 }
 
 const schema = Yup.object().shape({
@@ -36,6 +42,10 @@ const initialValues = {
     { id: 1, name: '' },
     { id: 2, name: '' },
   ],
+  foo: [
+    { id: 1, bar: '' },
+    { id: 2, bar: '' },
+  ],
 };
 
 const ArrayInputExample: React.FC = () => {
@@ -53,15 +63,19 @@ const ArrayInputExample: React.FC = () => {
         <h4>Array Input With Object</h4>
         <Input name="name" />
         <br />
+        Array de testes
         <ArrayInputObject name="testes" objectKey="name" />
+        <br />
+        Array de foo
+        <ArrayInputObject name="foo" objectKey="bar" />
         <br />
         <button type="submit">submit</button>
       </Form>
       <br />
       <div>
-        <div>initialValues: {JSON.stringify(initialValues, null, 2)}</div>
+        <div>initialValues: {JSON.stringify(initialValues, null, 4)}</div>
         <br />
-        <div>submitedValues: {JSON.stringify(submitedValues, null, 2)}</div>
+        <div>submitedValues: {JSON.stringify(submitedValues, null, 4)}</div>
       </div>
     </Fragment>
   );
