@@ -22,6 +22,9 @@ const Default: React.FC = ({ children }) => {
         <li>
           <Link to="/select">React Select</Link>
         </li>
+        <li>
+          <Link to="/masked_input">Input Mask</Link>
+        </li>
       </Sidebar>
       <Content>{children}</Content>
     </Container>

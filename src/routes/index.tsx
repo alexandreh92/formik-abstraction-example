@@ -8,6 +8,7 @@ import AsyncInitialValuesExample from '~/pages/AsyncInitialValuesExample';
 import ArrayInputStringExample from '~/pages/ArrayInputStringExample';
 import ArrayInputObjectExample from '~/pages/ArrayInputObjectExample';
 import SelectExample from '~/pages/SelectExample';
+import InputMaskExample from '~/pages/InputMaskExample';
 
 const Routes: React.FC = () => {
   return (
@@ -32,6 +33,7 @@ const Routes: React.FC = () => {
             component={ArrayInputObjectExample}
           />
           <Route exact path="/select" component={SelectExample} />
+          <Route exact path="/masked_input" component={InputMaskExample} />
         </Switch>
       </Default>
     </BrowserRouter>
