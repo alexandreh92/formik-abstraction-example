@@ -10,7 +10,7 @@ interface Props {
 const ArrayInputObject: React.FC<Props> = ({ name, objectKey }) => {
   return (
     <FieldArray name={name}>
-      {({ move, swap, push, insert, remove, unshift, pop, form }) => {
+      {({ push, remove, form }) => {
         return (
           <Fragment>
             <div>

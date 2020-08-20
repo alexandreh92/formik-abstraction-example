@@ -19,6 +19,9 @@ const Default: React.FC = ({ children }) => {
         <li>
           <Link to="/array_input_object">Array Input Object</Link>
         </li>
+        <li>
+          <Link to="/select">React Select</Link>
+        </li>
       </Sidebar>
       <Content>{children}</Content>
     </Container>

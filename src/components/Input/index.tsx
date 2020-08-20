@@ -1,5 +1,5 @@
 import React from 'react';
-import { Field, FieldProps } from 'formik';
+import { Field } from 'formik';
 
 interface Props {
   name: string;
@@ -8,7 +8,7 @@ interface Props {
 const Input: React.FC<Props> = ({ name }) => {
   return (
     <Field name={name}>
-      {({ field, form, meta }) => (
+      {({ field, meta }) => (
         <div>
           <input type="text" {...field} placeholder="Teste" />
           {meta.touched && meta.error && (

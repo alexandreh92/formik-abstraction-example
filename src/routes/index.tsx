@@ -7,6 +7,7 @@ import SimpleInputExample from '~/pages/SimpleInputExample';
 import AsyncInitialValuesExample from '~/pages/AsyncInitialValuesExample';
 import ArrayInputStringExample from '~/pages/ArrayInputStringExample';
 import ArrayInputObjectExample from '~/pages/ArrayInputObjectExample';
+import SelectExample from '~/pages/SelectExample';
 
 const Routes: React.FC = () => {
   return (
@@ -30,6 +31,7 @@ const Routes: React.FC = () => {
             path="/array_input_object"
             component={ArrayInputObjectExample}
           />
+          <Route exact path="/select" component={SelectExample} />
         </Switch>
       </Default>
     </BrowserRouter>
